@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Review</title>
+  <link rel="stylesheet" href="output.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+  <section
+    class="loginPopup absolute top-[30%] left-[35%] bg-white custom400:px-8 py-3 rounded-xl border border-gray-900">
+
+    <div
+      class="heading text-blue-900 text-sm custom300:text-[0.8rem] custom400:text-[1.1rem] sm:text-[1.4em] font-bold custom400:font-semibold mb-5 text-center">
+      Verify Details</div>
+
+    <div class="clientForm">
+      <div class="panPhone my-4">
+        <div class="clientInput">
+          <input
+            class="clientCode border border-gray-400 placeholder:text-[0.8rem] custom300:placeholder:text-sm custom400:placeholder:text-lg h-8 custom300:h-10 sm:h-10 custom300:w-56 custom400:w-56 sm:w-56 pl-2 rounded-md outline-none font-semibold text-gray-600"
+            autocomplete="off" type="text" name="clientCode" placeholder="Enter Client Code">
+        </div>
+      </div>
+      <div class="clientBox mt-4 mb-1">
+        <div class="panInput">
+          <input
+            class="panNumber border border-gray-400 placeholder:text-[0.8rem] custom300:placeholder:text-sm custom400:placeholder:text-lg h-8 custom300:h-10 sm:h-10 custom300:w-56 custom400:w-56 sm:w-56 pl-2 rounded-md outline-none font-semibold text-gray-600"
+            autocomplete="off" type="text" name="panNumber" placeholder="Enter Pan Number">
+        </div>
+      </div>
+      <div class="errorMsg text-center text-red-800 font-semibold hidden">Enter valid details</div>
+      <div class="submitButton text-center pt-2">
+        <button
+          class="verifyBtn bg-red-500 active:bg-red-500 hover:bg-red-600 text-white py-1.5 px-4 custom400:py-2 custom400:px-8 text-sm font-semibold rounded-md"
+          type="submit">Verify</button>
+      </div>
+    </div>
+
+    <div class="hidden otpForm">
+      <div class="otpBox mt-4">
+        <div class="otpInput">
+          <input
+            class="clientCode border border-gray-400 placeholder:text-[0.8rem] custom300:placeholder:text-sm custom400:placeholder:text-lg h-8 custom300:h-10 sm:h-10 custom300:w-60 custom400:w-80 sm:w-56 pl-2 rounded-md outline-none font-semibold text-gray-600"
+            autocomplete="off" type="text" name="otp" placeholder="Enter OTP">
+        </div>
+        <div class="resendOtp text-right pt-1">
+          <a href="#" class="text-blue-800 hover:text-blue-900 active:text-blue-700 font-semibold text-lg">Resend
+            Otp</a>
+        </div>
+      </div>
+      <div class="errorMsg text-center text-red-800 font-semibold hidden">Invalid OTP</div>
+      <div class="otpButton text-center">
+        <button
+          class="validateBtn bg-red-500 active:bg-red-500 hover:bg-red-600 text-white py-1.5 px-4 custom400:py-2 custom400:px-5 text-sm sm:text-lg font-semibold rounded-md"
+          type="submit">Validate</button>
+      </div>
+    </div>
+  </section>
+
+  <section
+    class="reviewSection md:flex md:justify-around md:items-center bg-gradient-to-br from-blue-100 to-pink-100 md:from-white md:to-white pb-3">
+    <div class="reviewImage text-center">
+      <div class="heading">
+        <div class="text-blue-900 text-xl custom301:text-2xl custom430:text-3xl md:text-3xl lg:text-4xl"><span
+            class="font-semibold">Feel</span> free to drop us your</div>
+        <div class="text-blue-900 text-xl custom301:text-2xl custom430:text-3xl md:text-3xl lg:text-4xl font-semibold">
+          Valueable Feedback</div>
+      </div>
+      <div class="feedbackImg my-10 hidden md:block">
+        <img src="OBJECTS.png" alt="Feedback Image">
+      </div>
+    </div>
+    <div
+      class="feedbackForm border-2 border-gray-300 my-8 pl-2 sm:pl-8 md:pl-4 lg:pl-8 pr-2 sm:pr-5 md:pr-2 lg:pr-5 pt-3 pb-4 md:w-[45vw] mx-2 custom430:mx-5 md:mx-0 rounded-xl bg-blue-50">
+      <div>
+        <div class="ques1">
+          <div class="font-semibold text-[0.9rem]">1. How would you describe your experience after using our website/app
+            for the first time?</div>
+          <div class="answer1 flex flex-wrap mt-1.5">
+            <div
+              class="fantastic border border-gray-300 font-Helvetica bg-white rounded-xl px-1 text-[0.75rem] custom430:text-[1rem] md:text-[0.8rem] lg:text-[1rem] xl:text-[1.2rem] text-HelveticaColor custom430:mr-2 md:mr-1 lg:mr-5 hover:bg-blue-600 hover:text-white hover:cursor-pointer flex items-center">
+              <div class=" mr-1.5 size-5 custom320:size-6"><img src="fantastic.png" alt=""></div> Fantastic!
+            </div>
+            <div
+              class="good border border-gray-300 bg-white font-Helvetica rounded-xl px-1 text-[0.75rem] custom430:text-[1rem] md:text-[0.8rem] lg:text-[1rem] xl:text-[1.2rem] text-HelveticaColor mx-1 custom430:mx-2 md:mx-1 lg:mx-5 hover:bg-blue-600 hover:text-white hover:cursor-pointer flex items-center">
+              <div class="mr-1.5 size-5 custom320:size-6"><img src="good.png" alt=""></div> Good
+            </div>
+            <div
+              class="notGood border border-gray-300 font-Helvetica bg-white rounded-xl px-1 py-0.5 text-[0.75rem] custom430:text-[1rem] md:text-[0.8rem] lg:text-[1rem] xl:text-[1.2rem] text-HelveticaColor custom430:ml-2 md:ml-1 lg:ml-5 hover:bg-blue-600 hover:text-white hover:cursor-pointer flex items-center">
+              <div class=" mr-1.5 size-5 custom320:size-6"><img src="notGood.png" alt=""></div> Not Good
+            </div>
+          </div>
+        </div>
+        <div class="ques2 mt-3">
+          <div class="font-semibold text-[0.9rem]">2. How would you rate your overall experience with our app/website?
+          </div>
+          <div class="answer2 flex mt-1.5" onmouseleave="unfillRating(event)">
+            <div class="star1 mx-1 hover:cursor-pointer" onmouseenter="fillRating(1)" onclick="getRating(1)">
+              <i class="str1 fa-solid fa-star text-gray-500 text-2xl"></i>
+            </div>
+            <div class="star2 mx-1 hover:cursor-pointer" onmouseenter="fillRating(2)" onclick="getRating(2)">
+              <i class="str2 fa-solid fa-star text-gray-500 text-2xl"></i>
+            </div>
+            <div class="star3 mx-1 hover:cursor-pointer" onmouseenter="fillRating(3)" onclick="getRating(3)">
+              <i class="str3 fa-solid fa-star text-gray-500 text-2xl"></i>
+            </div>
+            <div class="star4 mx-1 hover:cursor-pointer" onmouseenter="fillRating(4)" onclick="getRating(4)">
+              <i class="str4 fa-solid fa-star text-gray-500 text-2xl"></i>
+            </div>
+            <div class="star5 mx-1 hover:cursor-pointer" onmouseenter="fillRating(5)" onclick="getRating(5)">
+              <i class="str5 fa-solid fa-star text-gray-500 text-2xl"></i>
+            </div>
+          </div>
+        </div>
+        <div class="ques3 mt-3">
+          <div class="font-semibold text-[0.9rem]">3. How easy is it to navigate through our app/website?</div>
+          <div class="answer3 flex mt-1.5">
+            <div
+              class="easy border border-gray-300 font-Helvetica bg-white rounded-xl px-2.5 py-0.5 custom320:text-[1.1rem] text-HelveticaColor custom430:mr-3 md:mr-2 lg:mr-5 hover:bg-blue-600 hover:text-white hover:cursor-pointer">
+              Easy</div>
+            <div
+              class="normal border border-gray-300 bg-white font-Helvetica rounded-xl px-2.5 py-0.5 custom320:text-[1.1rem] text-HelveticaColor mx-2 custom430:mx-2 md:mx-1 lg:mx-5 hover:bg-blue-600 hover:text-white hover:cursor-pointer">
+              Normal</div>
+            <div
+              class="difficult border border-gray-300 font-Helvetica bg-white rounded-xl px-2.5 py-0.5 custom320:text-[1.1rem] text-HelveticaColor custom430:ml-3 md:ml-2 lg:ml-5 hover:bg-blue-600 hover:text-white hover:cursor-pointer">
+              Difficult</div>
+          </div>
+        </div>
+        <div class="ques4 mt-3">
+          <div class="font-semibold text-[0.9rem]">4. Would you recommend Dhanush to your friends & family?</div>
+          <div class="answer4 flex mt-1.5">
+            <div
+              class="yes border border-gray-300 font-Helvetica bg-white rounded-xl px-2.5 py-0.5 custom320:text-[1.1rem] text-HelveticaColor custom430:mr-3 md:mr-2 lg:mr-5 hover:bg-blue-600 hover:text-white hover:cursor-pointer">
+              Yes</div>
+            <div
+              class="no border border-gray-300 bg-white font-Helvetica rounded-xl px-2.5 py-0.5 custom320:text-[1.1rem] text-HelveticaColor mx-2 custom430:mx-2 md:mx-1 lg:mx-5 hover:bg-blue-600 hover:text-white hover:cursor-pointer">
+              No</div>
+            <div
+              class="mayBe border border-gray-300 font-Helvetica bg-white rounded-xl px-2.5 py-0.5 custom320:text-[1.1rem] text-HelveticaColor custom430:ml-3 md:ml-2 lg:ml-5 hover:bg-blue-600 hover:text-white hover:cursor-pointer">
+              May be</div>
+          </div>
+        </div>
+        <div class="ques5 mt-3">
+          <div class="font-semibold text-[0.9rem]">5. Please share about your experience (Optional).</div>
+          <textarea name="experience" placeholder="Anything you'd like to add? Your input is valuable to us."
+            class="border border-gray-400 rounded-xl mt-1.5 pl-2 pt-2 pr-1 w-[80vw] md:w-[38vw] h-28 text-gray-600 placeholder:text-gray-500 outline-none resize-none"
+            onchange="setExperience(event)"></textarea>
+        </div>
+        <div class="errorField hidden border border-red-300 rounded-lg w-52 mx-auto text-center text-sm bg-red-100">
+          Please fill the required fields.</div>
+        <div class="submitBtn text-center mt-2">
+          <button
+            class="feedbackButton text-xl px-10 custom301:px-14 custom310:px-16 custom430:px-28 custom510:px-36 md:px-20 lg:px-40 py-1.5 md:py-2 lg:py-2.5 rounded-xl text-blue-900 font-semibold bg-blue-100 active:bg-blue-100 hover:bg-blue-200">Send
+            Feedback</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://apis.google.com/js/api.js"></script>
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
