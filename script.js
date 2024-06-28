@@ -170,8 +170,8 @@ let verifyButton = document.querySelector(".verifyBtn");
 let clientForm = document.querySelector(".clientForm");
 
 verifyButton.addEventListener("click", (e) => {
-  let clientCode = document.querySelector(".clientCode").value;
-  let clientPanNumber = document.querySelector(".panNumber").value;
+  let clientCode = document.querySelector(".clientCode").value.toUpperCase();
+  let clientPanNumber = document.querySelector(".panNumber").value.toUpperCase();
   console.log(clientCode, clientPanNumber);
 
   let errorMessage = document.querySelector(".errorMsg");
@@ -253,6 +253,9 @@ feedbackButton.addEventListener("click", async (e) => {
       currentDate: new Date().toDateString(),
     };
 
+    let loadingBar = document.querySelector(".loadingBar");
+    loadingBar.style.display = "flex";
+
     await fetch(
       "https://script.google.com/macros/s/AKfycbw1V2cOs4LXCnvkL6tFLbfuWFBRqwJWEtULD62QW1EngzzP42T1ts6bqdgGCg8YY4Yt/exec",
       {
@@ -267,6 +270,7 @@ feedbackButton.addEventListener("click", async (e) => {
       .then((res) => console.log(res))
       .catch((error) => console.log(error));
 
+    loadingBar.style.display = "none";
     window.location.href = "thankYou.html";
   } else {
     errorField.style.display = "block";
