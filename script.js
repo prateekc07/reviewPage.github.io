@@ -219,7 +219,7 @@ verifyButton.addEventListener("click", (e) => {
   let clientPanNumber = document.querySelector(".panNumber").value;
   console.log(clientCode, clientPanNumber);
   $.ajax({
-    url: "https://test.cors.workers.dev/http://backoffice.ashikagroup.com:82/AshikaMobileApi/Service1.svc/GetClientDetails",
+    url: "https://test.cors.workers.dev/?http://backoffice.ashikagroup.com:82/AshikaMobileApi/Service1.svc/GetClientDetails",
     method: "GET",
     data: {
       tcFinyear: "2023-2024",
