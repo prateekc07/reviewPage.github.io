@@ -166,6 +166,73 @@ function setExperience(event) {
   experience = event.target.value;
 }
 
+let verifyButton = document.querySelector(".verifyBtn");
+let clientForm = document.querySelector(".clientForm");
+
+verifyButton.addEventListener("click", (e) => {
+  let clientCode = document.querySelector(".clientCode").value;
+  let clientPanNumber = document.querySelector(".panNumber").value;
+  console.log(clientCode, clientPanNumber);
+
+  let errorMessage = document.querySelector(".errorMsg");
+
+  if (
+    !isAlphanumeric(clientCode) &&
+    (!isAlphanumeric(clientPanNumber) || clientPanNumber.length !== 10)
+  ) {
+    errorMessage.innerText = "Enter valid Client Details";
+    errorMessage.style.display = "block";
+    setTimeout(() => {
+      errorMessage.style.display = "none";
+    }, 1000);
+  } else if (!isAlphanumeric(clientCode)) {
+    errorMessage.innerText = "Enter valid Client Code";
+    errorMessage.style.display = "block";
+    setTimeout(() => {
+      errorMessage.style.display = "none";
+    }, 1000);
+  } else if (
+    !isAlphanumeric(clientPanNumber) ||
+    clientPanNumber.length !== 10
+  ) {
+    errorMessage.innerText = "Enter valid Pan Number";
+    errorMessage.style.display = "block";
+    setTimeout(() => {
+      errorMessage.style.display = "none";
+    }, 1000);
+  } else {
+    document.querySelector(".loginPopup").style.display = "none";
+    document.body.style.pointerEvents = "auto";
+    document.body.style.overflow = "auto";
+    localStorage.setItem("clientCode", clientCode);
+    localStorage.setItem("clientPanNumber", clientPanNumber);
+  }
+
+  // $.ajax({
+  //   url: "http://backoffice.ashikagroup.com:82/AshikaMobileApi/Service1.svc/GetClientDetails",
+  //   method: "GET",
+  //   data: {
+  //     tcFinyear: "2023-2024",
+  //     tcFirmfilter: "ASK-000001",
+  //     tokenid: "ySXztrwYjdHJcgf/6Idj9UesqlyK1pAI",
+  //     tcClientCode: clientCode,
+  //     tcPanno: clientPanNumber,
+  //   },
+  //   success: function (result) {
+  //     console.log(result);
+  //   },
+  //   error: function (error) {
+  //     console.log(error);
+  //   },
+  // });
+  // clientForm.style.display = "none";
+  // otpForm.style.display = "block";
+});
+
+function isAlphanumeric(str) {
+  return /^[a-zA-Z0-9]+$/.test(str);
+}
+
 let feedbackButton = document.querySelector(".feedbackButton");
 let errorField = document.querySelector(".errorField");
 
@@ -177,6 +244,8 @@ feedbackButton.addEventListener("click", async (e) => {
     recommendation !== undefined
   ) {
     let data = {
+      clientCode: localStorage.getItem("clientCode"),
+      clientPanNumber: localStorage.getItem("clientPanNumber"),
       userMood: userMood,
       rating: rating,
       navigationExp: navigationExperience,
@@ -186,7 +255,7 @@ feedbackButton.addEventListener("click", async (e) => {
     };
 
     await fetch(
-      "https://script.google.com/macros/s/AKfycbx9KqaqUVkTqKb2JZ5vQvUG8xF_Hmq4t9mrVHQDHdnwjJ8vBatY_na7BiCbaTGt_CLkGQ/exec",
+      "https://script.google.com/macros/s/AKfycbw1V2cOs4LXCnvkL6tFLbfuWFBRqwJWEtULD62QW1EngzzP42T1ts6bqdgGCg8YY4Yt/exec",
       {
         method: "POST",
         mode: "no-cors",
@@ -207,41 +276,6 @@ feedbackButton.addEventListener("click", async (e) => {
     }, 3000);
   }
   e.preventDefault();
-});
-
-let verifyButton = document.querySelector(".verifyBtn");
-let validateButton = document.querySelector(".validateBtn");
-let clientForm = document.querySelector(".clientForm");
-let otpForm = document.querySelector(".otpForm");
-
-verifyButton.addEventListener("click", (e) => {
-  let clientCode = document.querySelector(".clientCode").value;
-  let clientPanNumber = document.querySelector(".panNumber").value;
-  console.log(clientCode, clientPanNumber);
-  $.ajax({
-    url: "http://backoffice.ashikagroup.com:82/AshikaMobileApi/Service1.svc/GetClientDetails",
-    method: "GET",
-    data: {
-      tcFinyear: "2023-2024",
-      tcFirmfilter: "ASK-000001",
-      tokenid: "ySXztrwYjdHJcgf/6Idj9UesqlyK1pAI",
-      tcClientCode: clientCode,
-      tcPanno: clientPanNumber,
-    },
-    success: function (result) {
-      console.log(result);
-    },
-    error: function (error) {
-      console.log(error);
-    },
-  });
-  // clientForm.style.display = "none";
-  // otpForm.style.display = "block";
-});
-
-validateButton.addEventListener("click", (e) => {
-  clientForm.style.display = "block";
-  otpForm.style.display = "none";
 });
 
 /* https://backoffice.ashikagroup.com:82/AshikaMobileApi/Service1.svc/GetClientDetails?tcFinyear=2023-2024&tcFirmfilter=ASK-000001&tokenid=ySXztrwYjdHJcgf/6Idj9UesqlyK1pAI&tcClientCode=C2024&tcPanno=MDCPS7881Q  */

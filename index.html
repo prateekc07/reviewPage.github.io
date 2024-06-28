@@ -9,55 +9,36 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 
-<body>
+<body class="pointer-events-none overflow-hidden">
 
-  <section
-    class="loginPopup absolute top-[30%] left-[35%] bg-white custom400:px-8 py-3 rounded-xl border border-gray-900">
-
-    <div
-      class="heading text-blue-900 text-sm custom300:text-[0.8rem] custom400:text-[1.1rem] sm:text-[1.4em] font-bold custom400:font-semibold mb-5 text-center">
-      Verify Details</div>
-
-    <div class="clientForm">
-      <div class="panPhone my-4">
-        <div class="clientInput">
-          <input
-            class="clientCode border border-gray-400 placeholder:text-[0.8rem] custom300:placeholder:text-sm custom400:placeholder:text-lg h-8 custom300:h-10 sm:h-10 custom300:w-56 custom400:w-56 sm:w-56 pl-2 rounded-md outline-none font-semibold text-gray-600"
-            autocomplete="off" type="text" name="clientCode" placeholder="Enter Client Code">
+  <section class="loginPopup bg-black bg-opacity-50 w-[100%] h-[100vh] flex justify-center items-center absolute">
+    <div class="pointer-events-auto w-fit h-fit bg-white px-5 py-3 rounded-xl border border-gray-900">
+    
+      <div
+        class="heading text-blue-900 text-sm custom300:text-[0.8rem] custom400:text-[1.1rem] sm:text-[1.4em] font-bold custom400:font-semibold mb-5 text-center">
+        Verify Details</div>
+    
+      <div class="clientForm">
+        <div class="panPhone my-4">
+          <div class="clientInput">
+            <input
+              class="clientCode border border-gray-400 placeholder:text-[0.8rem] custom300:placeholder:text-sm custom400:placeholder:text-lg h-8 custom300:h-10 sm:h-10 w-36 custom300:w-44 custom400:w-48 sm:w-56 pl-2 rounded-md outline-none font-semibold text-gray-600"
+              autocomplete="off" type="text" name="clientCode" placeholder="Enter Client Code">
+          </div>
         </div>
-      </div>
-      <div class="clientBox mt-4 mb-1">
-        <div class="panInput">
-          <input
-            class="panNumber border border-gray-400 placeholder:text-[0.8rem] custom300:placeholder:text-sm custom400:placeholder:text-lg h-8 custom300:h-10 sm:h-10 custom300:w-56 custom400:w-56 sm:w-56 pl-2 rounded-md outline-none font-semibold text-gray-600"
-            autocomplete="off" type="text" name="panNumber" placeholder="Enter Pan Number">
+        <div class="clientBox mt-4 mb-1">
+          <div class="panInput">
+            <input
+              class="panNumber border border-gray-400 placeholder:text-[0.8rem] custom300:placeholder:text-sm custom400:placeholder:text-lg h-8 custom300:h-10 sm:h-10 w-36 custom300:w-44 custom400:w-48 sm:w-56 pl-2 rounded-md outline-none font-semibold text-gray-600"
+              autocomplete="off" type="text" name="panNumber" placeholder="Enter Pan Number">
+          </div>
         </div>
-      </div>
-      <div class="errorMsg text-center text-red-800 font-semibold hidden">Enter valid details</div>
-      <div class="submitButton text-center pt-2">
-        <button
-          class="verifyBtn bg-red-500 active:bg-red-500 hover:bg-red-600 text-white py-1.5 px-4 custom400:py-2 custom400:px-8 text-sm font-semibold rounded-md"
-          type="submit">Verify</button>
-      </div>
-    </div>
-
-    <div class="hidden otpForm">
-      <div class="otpBox mt-4">
-        <div class="otpInput">
-          <input
-            class="clientCode border border-gray-400 placeholder:text-[0.8rem] custom300:placeholder:text-sm custom400:placeholder:text-lg h-8 custom300:h-10 sm:h-10 custom300:w-60 custom400:w-80 sm:w-56 pl-2 rounded-md outline-none font-semibold text-gray-600"
-            autocomplete="off" type="text" name="otp" placeholder="Enter OTP">
+        <div class="errorMsg text-center text-red-800 font-semibold hidden"></div>
+        <div class="submitButton text-center pt-2">
+          <button
+            class="verifyBtn bg-red-500 active:bg-red-500 hover:bg-red-600 text-white py-1.5 px-4 custom400:py-2 custom400:px-8 text-sm font-semibold rounded-md"
+            type="submit">Verify</button>
         </div>
-        <div class="resendOtp text-right pt-1">
-          <a href="#" class="text-blue-800 hover:text-blue-900 active:text-blue-700 font-semibold text-lg">Resend
-            Otp</a>
-        </div>
-      </div>
-      <div class="errorMsg text-center text-red-800 font-semibold hidden">Invalid OTP</div>
-      <div class="otpButton text-center">
-        <button
-          class="validateBtn bg-red-500 active:bg-red-500 hover:bg-red-600 text-white py-1.5 px-4 custom400:py-2 custom400:px-5 text-sm sm:text-lg font-semibold rounded-md"
-          type="submit">Validate</button>
       </div>
     </div>
   </section>
