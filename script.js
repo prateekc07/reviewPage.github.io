@@ -203,7 +203,6 @@ verifyButton.addEventListener("click", (e) => {
   } else {
     document.querySelector(".loginPopup").style.display = "none";
     document.body.style.pointerEvents = "auto";
-    document.body.style.overflow = "auto";
     localStorage.setItem("clientCode", clientCode);
     localStorage.setItem("clientPanNumber", clientPanNumber);
   }
